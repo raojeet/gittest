@@ -1,0 +1,10 @@
+:host {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    grid-template-rows: 100px 1fr;
+  }
+  main {
+    grid-column-start: 2;
+  }
+}

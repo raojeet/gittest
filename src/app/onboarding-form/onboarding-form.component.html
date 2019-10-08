@@ -1,0 +1,86 @@
+<h1>Welcome to IQ!</h1>
+<h4>A community of the smartest businesses</h4>
+<div class="hr"></div>
+<h2>Request Form</h2>
+
+<form [formGroup]="onboardingForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Business Name*</label>
+            <input type="text" formControlName="businessName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.businessName.errors }" />
+            <div *ngIf="submitted && f.businessName.errors" class="invalid-feedback">
+                <div *ngIf="f.businessName.errors.required">Business name is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Business Type*</label>
+            <select formControlName="businessType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.businessType.errors }">
+                <option value=""></option>
+                <option value="Campus">Campus</option>
+                <option value="Food and Drink">Food and Drink</option>
+                <option value="Parking/Toll">Parking/Toll</option>
+                <option value="Advertiser">Advertiser</option>
+            </select>
+            <div *ngIf="submitted && f.businessType.errors" class="invalid-feedback">
+                <div *ngIf="f.businessType.errors.required">Business type is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Address line 1*</label>
+            <input type="text" formControlName="addressLine1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressLine1.errors }" />
+            <div *ngIf="submitted && f.addressLine1.errors" class="invalid-feedback">
+                <div *ngIf="f.addressLine1.errors.required">Address line 1 is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Address line 2</label>
+            <input type="text" formControlName="addressLine2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.addressLine2.errors }" />
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group width-60">
+            <label>State</label>
+            <select formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                <option value=""></option>
+            </select>
+            <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+                <div *ngIf="f.state.errors.required">State is required</div>
+            </div>
+        </div>
+        <div class="form-group width-40">
+            <label>Zip code*</label>
+            <input type="text" formControlName="zipCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors }" />
+            <div *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+                <div *ngIf="f.zipCode.errors.required">Zip code is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary">Submit Request</button>
+        </div>
+    </div>
+</form>

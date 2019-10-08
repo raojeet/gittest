@@ -1,0 +1,32 @@
+.main-container {
+  position: fixed;
+  top: 76px;
+  bottom: 40px;
+  left: 11%;
+  right: 11%;
+  .blur-bg {
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background-color: rgba(205, 45, 123, 0.2);
+    background-repeat: no-repeat;
+    overflow: scroll;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+header {
+  padding: 16px 11%;
+  button {
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    background-color: rgba(94, 30, 70, 0.14);
+    padding: 9px 38.5px 10px;
+    height: 40px;
+    float: right;
+  }
+}
